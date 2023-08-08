@@ -251,13 +251,15 @@
                             (255,0,0), 2)
     
             ax[idx].imshow(sample_image)
+            ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/517ed5f5-602d-4f19-9152-bf2a625f6637)
 
-19. Скачать VGG16
+
+20. Скачать VGG16
 
             vgg = VGG16(include_top=False)
             vgg.summary()
 
-20. Создаем архитектуру VGG16
+21. Создаем архитектуру VGG16
 
             def build_model(): 
             input_layer = Input(shape=(120, 120, 3))
@@ -290,7 +292,7 @@
         
             return facetracker
 
-21. Тестируем нейронную сеть
+22. Тестируем нейронную сеть
 
             facetracker = build_model()
             facetracker.summary()
@@ -300,7 +302,7 @@
             classes, coords = facetracker.predict(X)
             classes, coords
 
-22. Определите оптимизатор и LR
+23. Определите оптимизатор и LR
 
         batches_per_epoch = len(train)
         lr_decay = (1./0.75 -1)/batches_per_epoch
@@ -323,13 +325,13 @@
         regressloss = localization_loss
 
 
-23. Проверяем показатели потерь
+24. Проверяем показатели потерь
 
             localization_loss(y[1], coords)
             classloss(y[0], classes)
             regressloss(y[1], coords)
     
-24. Тренируем нейронную сеть
+25. Тренируем нейронную сеть
 
 
             class FaceTracker(Model): 
@@ -420,12 +422,15 @@
                                         (255,0,0), 2)
             
                 ax[idx].imshow(sample_image)
+            ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/c328c18b-f4b1-442f-9892-b01a5b7d40bd)
+
+                
     
-26. Сохраняем модель
+27. Сохраняем модель
     
             facetracker.save('facetracker-15.h5')
     
-27. Проверяем модель в реальном времени
+28. Проверяем модель в реальном времени
     
             cap = cv2.VideoCapture(1)
             while cap.isOpened():
@@ -463,6 +468,8 @@
                     break
             cap.release()
             cv2.destroyAllWindows()
+    ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/40311d70-4c10-4db9-affc-36f306af6677)
+
     
 
 
