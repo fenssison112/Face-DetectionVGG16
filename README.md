@@ -125,7 +125,7 @@
                                 (255,0,0), 2)
             
             plt.imshow(augmented['image'])
-            ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/8c73dcfe-f062-4fe6-8d9a-da7ff84aab90)
+    ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/8c73dcfe-f062-4fe6-8d9a-da7ff84aab90)
 
     
 
