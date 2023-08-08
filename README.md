@@ -69,6 +69,8 @@
         for idx, image in enumerate(plot_images):
             ax[idx].imshow(image)
         plt.show()
+   ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/4b752e70-46b4-4b0e-8877-e93fa42d2d27)
+
 6. ВРУЧНУЮ РАСПРЕДЕЛИТЕ ДАННЫЕ TRAIN TEST И VAL
 
 Для этого в крневой папке (data) нужно создать 3 папки train, test и val. Также в каждой из этих папок нужно создать еще 2 папки images и labels
