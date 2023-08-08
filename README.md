@@ -251,7 +251,7 @@
                             (255,0,0), 2)
     
             ax[idx].imshow(sample_image)
-            ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/517ed5f5-602d-4f19-9152-bf2a625f6637)
+    ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/517ed5f5-602d-4f19-9152-bf2a625f6637)
 
 
 20. Скачать VGG16
