@@ -406,7 +406,7 @@
             ax[2].legend()
             
             plt.show()
-            ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/83a5b184-0c5f-4157-a017-ef1a96c254d6)
+    ![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/83a5b184-0c5f-4157-a017-ef1a96c254d6)
 
             
             test_data = test.as_numpy_iterator()
