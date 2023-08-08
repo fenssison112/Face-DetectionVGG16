@@ -1,3 +1,7 @@
+Данный код отвечает за распознавания лица в режиме реального времени. Благодоря аугментации данных можно обучить модель распознавать лицо с небольшим количеством данных. Также можно обучить модель распознавать не только лицо, можно обучить распознавть авто, номерные знаки и т.д.. 
+
+1. Импортирование нужных бибилиотек
+
 import tensorflow as tf
 import json
 import numpy as np
@@ -12,6 +16,35 @@ from keras.layers import Input, Conv2D, Dense, GlobalMaxPooling2D
 from keras.applications import VGG16
 from keras.models import load_model
 
+2. Создаем свой датасет с помощью OpenCV
+
+IMAGES_PATH = os.path.join('data','images')
+number_images = 30
+
+cap = cv2.VideoCapture(1)
+for imgnum in range(number_images):
+    print('Collecting image {}'.format(imgnum))
+    ret, frame = cap.read()
+    imgname = os.path.join(IMAGES_PATH,f'{str(uuid.uuid1())}.jpg')
+    cv2.imwrite(imgname, frame)
+    cv2.imshow('frame', frame)
+    time.sleep(0.5)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()
+
+3. Запускаем Labelme
+
+labelme
+
+После запуска labelme, выбираем путь к папке с изображениями 
+1. Нажимаем Open Dir
+2. Далее чтобы указать путь к папке куда будут сохраняться координаты нажимаем File -> Change Output Dir и указываем папку
+3. Нажимаем Edit -> Create Rectangle и выделяем нужный объект 2 точками, и именуем его
+
+![image](https://github.com/fenssison112/Face-DetectionVGG16/assets/109478845/3d3c9bb5-4127-4336-90a1-3e3b227b24c9)
 
 images = tf.data.Dataset.list_files('/content/drive/MyDrive/data/images/*.jpg')
 images.as_numpy_iterator().next()
